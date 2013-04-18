@@ -22,9 +22,23 @@ file = File.open("makes_models.csv", "r")
  end
 
 line_num=0
-File.open("makes_models.csv","r").each do |line|
+File.new("makes_models.csv","r").each do |line|
  puts " processed #{line_num += 1} Lines"
 end
  
 File.size("makes_models.csv") # I m lost here I need help
 
+
+C:\Users\Sedinirina\Desktop>irb --simple-prompt
+>> store = {"Chevrolet"=>["Malibu","Cobalt"], "Ford"=>["Mustang","Taurus"]}
+=> {"Chevrolet"=>["Malibu", "Cobalt"], "Ford"=>["Mustang", "Taurus"]}
+>> filter_key = "Ford"
+=> "Ford"
+>> store.keys.each do | key |
+?>   next if key == filter_key
+>>   store.delete key
+>> end
+=> ["Chevrolet", "Ford"]
+>> store
+=> {"Ford"=>["Mustang", "Taurus"]}
+>>
